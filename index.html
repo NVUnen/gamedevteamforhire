@@ -838,46 +838,46 @@
           <div class="glass-panel contact-form-container" id="contact-form-wrapper">
 
             <!-- Acquisition Form -->
-            <form class="contact-form" id="acquisition-form">
-              <div class="form-row">
-                <div class="form-group">
-                  <label class="font-label-caps" for="contact-name">Name *</label>
-                  <input type="text" id="contact-name" placeholder="REPRESENTATIVE" required>
-                </div>
-                <div class="form-group">
-                  <label class="font-label-caps" for="contact-studio">Studio</label>
-                  <input type="text" id="contact-studio" placeholder="ORGANIZATION">
-                </div>
-              </div>
+           <form class="contact-form" id="acquisition-form" action="https://formspree.io/f/xrevqkqp" method="POST">
+  <div class="form-row">
+    <div class="form-group">
+      <label class="font-label-caps" for="contact-name">Name *</label>
+      <input type="text" id="contact-name" name="name" placeholder="REPRESENTATIVE" required>
+    </div>
+    <div class="form-group">
+      <label class="font-label-caps" for="contact-studio">Studio</label>
+      <input type="text" id="contact-studio" name="studio" placeholder="ORGANIZATION">
+    </div>
+  </div>
 
-              <div class="form-row">
-                <div class="form-group">
-                  <label class="font-label-caps" for="contact-email">Email *</label>
-                  <input type="email" id="contact-email" placeholder="PRODUCER@STUDIO.COM" required>
-                </div>
-                <div class="form-group">
-                  <label class="font-label-caps" for="contact-interest">Interest</label>
-                  <select id="contact-interest">
-                    <option value="Co-Dev">Co-Dev</option>
-                    <option value="Outsourcing">Outsourcing</option>
-                    <option value="Individual Hire">Individual Hire</option>
-                    <option value="Other">Other</option>
-                  </select>
-                </div>
-              </div>
+  <div class="form-row">
+    <div class="form-group">
+      <label class="font-label-caps" for="contact-email">Email *</label>
+      <input type="email" id="contact-email" name="email" placeholder="PRODUCER@STUDIO.COM" required>
+    </div>
+    <div class="form-group">
+      <label class="font-label-caps" for="contact-interest">Interest</label>
+      <select id="contact-interest" name="interest">
+        <option value="Co-Dev">Co-Dev</option>
+        <option value="Outsourcing">Outsourcing</option>
+        <option value="Individual Hire">Individual Hire</option>
+        <option value="Other">Other</option>
+      </select>
+    </div>
+  </div>
 
-              <div class="form-group">
-                <label class="font-label-caps" for="contact-needs">Describe your needs</label>
-                <textarea id="contact-needs" placeholder="We would like you to join us in ..." rows="8"></textarea>
-              </div>
+  <div class="form-group">
+    <label class="font-label-caps" for="contact-needs">Describe your needs</label>
+    <textarea id="contact-needs" name="message" placeholder="We would like you to join us in ..." rows="8"></textarea>
+  </div>
 
-              <div style="margin-top: 1rem;">
-                <button type="submit" class="btn btn-primary" style="width: 100%;">
-                  Send request
-                  <span class="material-symbols-outlined">send</span>
-                </button>
-              </div>
-            </form>
+  <div style="margin-top: 1rem;">
+    <button type="submit" class="btn btn-primary" style="width: 100%;">
+      Send request
+      <span class="material-symbols-outlined">send</span>
+    </button>
+  </div>
+</form>
 
             <!-- Success Panel (Hidden by default) -->
             <div class="contact-success" id="contact-success-wrapper">
