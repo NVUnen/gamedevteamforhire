@@ -214,29 +214,40 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   // 8. Contact Form Acquisition Interceptor
-  const contactForm = document.getElementById("acquisition-form");
-  const successWrapper = document.getElementById("contact-success-wrapper");
-  const formWrapper = document.getElementById("contact-form-wrapper");
+const contactForm = document.getElementById("acquisition-form");
+const successWrapper = document.getElementById("contact-success-wrapper");
+const formWrapper = document.getElementById("contact-form-wrapper");
 
-  if (contactForm && successWrapper && formWrapper) {
-    contactForm.addEventListener("submit", (e) => {
-      e.preventDefault();
-      
-      // Animate transition
-      contactForm.style.opacity = 0;
-      setTimeout(() => {
-        contactForm.style.display = "none";
-        successWrapper.style.display = "flex";
-        formWrapper.classList.add("success-border");
-        
-        // Scroll smoothly to contact box center
-        formWrapper.scrollIntoView({
-          behavior: "smooth",
-          block: "center"
-        });
-      }, 300);
-    });
-  }
+if (contactForm && successWrapper && formWrapper) {
+  contactForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(contactForm);
+
+    try {
+      const response = await fetch("https://formspree.io/f/xrevqkqp", {
+        method: "POST",
+        body: formData,
+        headers: { "Accept": "application/json" }
+      });
+
+      if (response.ok) {
+        // Animate transition to success state
+        contactForm.style.opacity = 0;
+        setTimeout(() => {
+          contactForm.style.display = "none";
+          successWrapper.style.display = "flex";
+          formWrapper.classList.add("success-border");
+          formWrapper.scrollIntoView({ behavior: "smooth", block: "center" });
+        }, 300);
+      } else {
+        alert("Er is iets misgegaan. Probeer het opnieuw.");
+      }
+    } catch (error) {
+      alert("Er is een netwerkfout opgetreden. Probeer het opnieuw.");
+    }
+  });
+}
 
   // 9. Back to Top Button
   const backToTopBtn = document.getElementById("back-to-top");
