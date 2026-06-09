@@ -184,7 +184,7 @@
             </div>
 
             <p class="font-body-lg text-white">
-              Over the past 20 years, we have worked on some of the world's best known videogame 		franchises. We developed two separate mobile entries in the Halo franchise for Microsoft, contributed to Assassin's Creed Nexus as a co-dev party and delivered a full blown installment in the Metro franchise. In the form of Metro: Awakening, next to 15+ other games. We have worked on mobile, VR console and PC and everything in between and always to the satisfaction of our partners,  delivering on time, to budget and to quality! 
+              Over the past 20 years, we have worked on some of the world's best known videogame 		franchises. We developed two separate mobile entries in the Halo franchise for Microsoft, contributed to Assassin's Creed Nexus as a co-dev party and delivered a full blown installment in the Metro franchise. In the form of Metro Awakening, next to 15+ other games. We have worked on mobile, VR console and PC and everything in between and always to the satisfaction of our partners,  delivering on time, to budget and to quality! 
             </p>
 
             <div class="dossier-games-list">
@@ -262,8 +262,8 @@
             <div class="bento-body">
               <ul>
                 <li>Engine Programmers</li>
-                <li>Systems Programmer</li>
-                <li>Gameplay Programmer</li>
+                <li>Systems Programmers</li>
+                <li>Gameplay Programmers</li>
                 <li>Graphics Programmer</li>
               </ul>
             </div>
@@ -302,7 +302,7 @@
             </div>
             <div class="bento-body">
               <ul>
-                <li>Executive Producers</li>
+                <li>Senior Producers</li>
                 <li>Project Managers</li>
                 <li>Outsourcing Producers</li>
                 <li>Art development Director</li>
@@ -793,26 +793,26 @@
           <div class="glass-panel contact-form-container" id="contact-form-wrapper">
 
             <!-- Acquisition Form -->
-            <form class="contact-form" id="acquisition-form">
+            <form class="contact-form" id="acquisition-form" action="https://formspree.io/f/xrevqkqp" method="POST">
               <div class="form-row">
                 <div class="form-group">
                   <label class="font-label-caps" for="contact-name">Name *</label>
-                  <input type="text" id="contact-name" placeholder="REPRESENTATIVE" required>
+                  <input type="text" id="contact-name" name="name" placeholder="REPRESENTATIVE" required>
                 </div>
                 <div class="form-group">
                   <label class="font-label-caps" for="contact-studio">Studio</label>
-                  <input type="text" id="contact-studio" placeholder="ORGANIZATION">
+                  <input type="text" id="contact-studio" name="studio" placeholder="ORGANIZATION">
                 </div>
               </div>
 
               <div class="form-row">
                 <div class="form-group">
                   <label class="font-label-caps" for="contact-email">Email *</label>
-                  <input type="email" id="contact-email" placeholder="PRODUCER@STUDIO.COM" required>
+                  <input type="email" id="contact-email" name="email" placeholder="PRODUCER@STUDIO.COM" required>
                 </div>
                 <div class="form-group">
                   <label class="font-label-caps" for="contact-interest">Interest</label>
-                  <select id="contact-interest">
+                  <select id="contact-interest" name="interest">
                     <option value="Co-Dev">Co-Dev</option>
                     <option value="Outsourcing">Outsourcing</option>
                     <option value="Individual Hire">Individual Hire</option>
@@ -823,9 +823,8 @@
 
               <div class="form-group">
                 <label class="font-label-caps" for="contact-needs">Describe your needs</label>
-                <textarea id="contact-needs" placeholder="We would like you to join us in ..." rows="8"></textarea>
+                <textarea id="contact-needs" name="message" placeholder="We would like you to join us in ..." rows="8"></textarea>
               </div>
-
               <div style="margin-top: 1rem;">
                 <button type="submit" class="btn btn-primary" style="width: 100%;">
                   Send request
@@ -860,7 +859,6 @@
   <button id="back-to-top" aria-label="Back to top">
     <span class="material-symbols-outlined">keyboard_arrow_up</span>
   </button>
-aw
   <!-- Footer -->
   <footer>
     <div class="container footer-container">
