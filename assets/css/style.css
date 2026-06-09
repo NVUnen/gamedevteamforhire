@@ -149,6 +149,11 @@ body::before {
   color: var(--color-text-muted);
 }
 
+.font-body-lg strong {
+  font-weight: 800;
+  color: var(--color-amber-accent);
+}
+
 .font-body-md {
   font-family: var(--font-family-body);
   font-size: 0.875rem; /* 14px */
@@ -252,17 +257,6 @@ body::before {
   transition: opacity 0.3s ease;
 }
 
-.glass-interactive:hover::before {
-  opacity: 1;
-}
-
-.glass-interactive:hover {
-  border-color: rgba(242, 99, 48, 0.45);
-  box-shadow: 
-    inset 0 1px 0 rgba(255, 255, 255, 0.05),
-    0 15px 35px -10px rgba(0, 0, 0, 0.9),
-    0 0 15px rgba(242, 99, 48, 0.08);
-}
 
 .glass-interactive > * {
   position: relative;
@@ -397,13 +391,13 @@ body::before {
   text-decoration: none;
   text-transform: uppercase;
   font-family: var(--font-family-display);
-  font-size: 0.875rem;
+  font-size: 1.2rem;
   letter-spacing: 0.15em;
   padding: 0.75rem 1.5rem;
   border-radius: var(--radius-sm);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
-  font-weight: 700;
+  font-weight: 400;
   border: 1px solid transparent;
 }
 
@@ -414,6 +408,7 @@ body::before {
   box-shadow: 0 0 15px rgba(224, 86, 36, 0.25);
   position: relative;
   overflow: hidden;
+  
 }
 
 /* Glint effect wipe animation on hover */
@@ -771,18 +766,6 @@ body::before {
   transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease, background 0.3s ease;
 }
 
-.bento-card:hover {
-  background: radial-gradient(
-    circle at 100% 0%,
-    rgba(242, 99, 48, 0.35) 0%,
-    rgba(20, 20, 22, 0.96) 75%
-  );
-  border-color: rgba(242, 99, 48, 0.55);
-  box-shadow: 
-    inset 0 1px 0 rgba(255, 255, 255, 0.05),
-    0 20px 40px -10px rgba(0, 0, 0, 0.9),
-    0 0 25px rgba(242, 99, 48, 0.1);
-}
 
 .bento-header {
   display: flex;
@@ -826,21 +809,6 @@ body::before {
   pointer-events: none;
 }
 
-/* Hover effects for Bento cards */
-.bento-card:hover .bento-hexagon svg {
-  filter: drop-shadow(0 0 8px rgba(242, 99, 48, 0.6));
-  transform: scale(1.05);
-}
-
-.bento-card:hover .bento-hexagon svg path {
-  fill: rgba(242, 99, 48, 0.15);
-  stroke: var(--color-primary);
-}
-
-.bento-card:hover .bento-hexagon .material-symbols-outlined {
-  color: var(--color-primary-container);
-  transform: translate(-50%, -50%) scale(1.1);
-}
 
 .bento-header p {
   color: var(--color-primary);
