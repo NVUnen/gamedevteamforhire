@@ -478,7 +478,7 @@ body::before {
   padding-bottom: 80px;
   background-image: 
     linear-gradient(to bottom, rgba(11, 11, 12, 0.4), var(--color-base) 95%),
-    url('../images/hero-bg.jpg');
+    url('../images/hero-bg.png');
   background-size: cover;
   background-position: center;
   overflow: hidden;
