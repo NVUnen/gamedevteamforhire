@@ -844,122 +844,6 @@ body::before {
 }
 
 /* ==========================================================================
-   TEAM CAROUSEL
-   ========================================================================== */
-.carousel-wrapper {
-  position: relative;
-}
-
-/* Carousel scroll track */
-.carousel-track {
-  display: flex;
-  gap: 1.5rem;
-  overflow: hidden;
-  padding-bottom: 2rem;
-}
-
-.carousel-slide {
-  flex-shrink: 0;
-  width: calc(20% - 1.2rem); /* 5 columns desktop */
-}
-
-.member-card {
-  height: 100%;
-}
-
-.member-card:hover {
-  border-color: rgba(242, 99, 48, 0.5);
-}
-
-.member-image-box {
-  position: relative;
-  height: 256px;
-  overflow: hidden;
-}
-
-.member-image-box img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: grayscale(100%);
-  transform: scale(1.05);
-  transition: filter 0.5s ease, transform 0.5s ease;
-}
-
-.member-card:hover .member-image-box img {
-  filter: grayscale(0%);
-  transform: scale(1);
-}
-
-
-
-.member-info {
-  padding: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.member-role {
-  color: var(--color-amber-accent);
-}
-
-.member-socials {
-  border-top: 1px solid rgba(89, 65, 58, 0.2);
-  padding-top: 1rem;
-  display: flex;
-  gap: 1rem;
-}
-
-.member-socials a {
-  color: var(--color-text-muted);
-  text-decoration: none;
-  transition: color 0.3s ease;
-  display: inline-flex;
-}
-
-.member-socials a:hover {
-  color: var(--color-primary);
-}
-
-/* Carousel Buttons */
-.carousel-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 10;
-  width: 48px;
-  height: 48px;
-  background-color: var(--color-surface-raised);
-  border: 1px solid rgba(89, 65, 58, 0.3);
-  color: var(--color-primary);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  border-radius: var(--radius-sm);
-  transition: all 0.3s ease;
-  opacity: 0;
-}
-
-.carousel-wrapper:hover .carousel-btn {
-  opacity: 1;
-}
-
-.carousel-btn:hover {
-  background-color: var(--color-primary-container);
-  color: #ffffff;
-}
-
-.carousel-btn-left {
-  left: -24px;
-}
-
-.carousel-btn-right {
-  right: -24px;
-}
-
-/* ==========================================================================
    CAPABILITIES SECTION
    ========================================================================== */
 #capabilities {
@@ -1462,5 +1346,217 @@ footer {
   
   .contact-form-container {
     padding: 1.5rem;
+  }
+}
+
+/* ==========================================================================
+   ROSTER PAGE SPECIFICS
+   ========================================================================== */
+.roster-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.expanded-card {
+  height: auto;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.member-image-box {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(89, 65, 58, 0.3);
+}
+
+.member-image-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+
+.expanded-card .member-info {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  gap: 0.5rem;
+}
+
+/* Header layout for Name + Title (Left) and LinkedIn (Right) */
+.member-footer-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+}
+
+.member-name-title {
+  display: flex;
+  flex-direction: column;
+}
+
+.member-name-title h3 {
+  font-size: 1.35rem; /* Scaled down from the default 1.5rem */
+  line-height: 1.1;
+}
+
+.member-name-title h4 {
+  font-size: 1.25rem; 
+  display: flex;
+  align-items: flex-start;
+  margin-top: 0.25rem;
+}
+
+.linkedin-btn {
+  color: var(--color-text-muted);
+  transition: color 0.2s ease-out, transform 0.2s ease-out;
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  scale: 1.25;
+}
+
+.linkedin-btn:hover {
+  color: var(--color-primary);
+  transform: scale(1.05);
+}
+
+/* Section wrappers */
+.member-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.member-section-divider {
+  border-top: 1px solid rgba(89, 65, 58, 0.2);
+  padding-top: 1.5rem;
+}
+
+/* Stacked tags for games */
+.game-tag-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.game-tag {
+  font-family: var(--font-family-body);
+  font-size: 0.75rem; /* Increased from 0.6875rem for better readability */
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border-radius: var(--radius-sm);
+  padding: 6px 12px; /* Increased from 4px 8px to give the box more physical weight */
+  display: inline-block;
+  white-space: normal;
+  line-height: 1.4;
+  overflow-wrap: break-word;
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  margin: 0;
+}
+
+/* ==========================================================================
+   ORG CHART / HIERARCHY LAYOUT (UPDATED)
+   ========================================================================== */
+.org-structure {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem; /* Increased gap to clearly separate the 3 tiers */
+}
+
+/* Tier 1 & 2 Containers (Leadership & Principals) */
+.tier-management, .tier-principals {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.management-pod, .principals-pod {
+  width: 100%;
+  max-width: 1440px; 
+}
+
+/* Tier 3: Department Squads - 4 Columns */
+.tier-departments {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  align-items: start;
+  border-top: 1px solid rgba(89, 65, 58, 0.3);
+  padding-top: 4rem;
+}
+
+/* ==========================================================================
+   UNIFIED SQUAD LIST (Replaces Tier 3 Departments)
+   ========================================================================== */
+.squad-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 clean columns */
+  column-gap: 4rem;
+  row-gap: 0;
+  align-items: start;
+  align-content: start;
+}
+
+/* Right side content (Tags & Icons) */
+.squad-member-meta {
+  display: flex;
+  align-items: center; /* This forces perfect vertical alignment */
+  gap: 16px; /* Consistent spacing between the tag and the icon */
+}
+
+.squad-member {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 0;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.05);
+}
+
+.squad-member:last-child {
+  border-bottom: none;
+}
+
+.squad-member-details{
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+/* Responsive Fallbacks */
+@media (max-width: 1023px) {
+  .squad-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .squad-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Responsive Fallbacks */
+@media (max-width: 1279px) {
+  .tier-departments {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on tablets */
+    gap: 3rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .tier-departments {
+    grid-template-columns: 1fr; /* 1 column on mobile */
   }
 }

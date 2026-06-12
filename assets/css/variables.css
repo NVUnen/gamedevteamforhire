@@ -88,8 +88,8 @@
   --gap-sm: 8px;
   --gap-md: 16px;
   --gap-lg: 24px;
-  --section-macro-desktop: 140px;
-  --section-macro-mobile: 64px;
+  --section-macro-desktop: 60px;
+  --section-macro-mobile: 60px;
   --max-width: 1280px;
 
   /* ==========================================================================
